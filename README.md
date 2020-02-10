@@ -17,6 +17,7 @@ Here is an overview of the Beaker documentation:
 * [Datasets](/docs/concept/datasets.md)
 * [Experiments](/docs/concept/experiments.md)
 * [Groups](/docs/concept/groups.md)
+* [Workspaces](/docs/concept/workspaces.md)
 
 ## Resources
 
