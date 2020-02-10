@@ -1,14 +1,14 @@
-# Beaker Images
+# Images
 
 Images are Beaker's unit of executable code. A Beaker image combines a Docker image with metadata,
 such as its author and description, and an optional richer narrative in markdown. Please refer to
-[the wordcount example](https://beaker.org/bp/bp_qbjvcda1sed7) for an overview.
+[the wordcount example](https://beaker.org/im/im_qbjvcda1sed7) for an overview.
 
 Like datasets, Beaker images are immutable. The following example shows how to create and use images.
 
 ## Preparation: Build a Docker Image
 
-This example refers to the [wordcount](../examples/wordcount) example, but you can use any Docker
+This example refers to the [wordcount](../../examples/wordcount) example, but you can use any Docker
 image at your disposal. To build it, copy the example's files and build them with the following
 command
 
@@ -89,9 +89,6 @@ a more human-friendly tag, set it with an additional argument:
 ▶ beaker image pull examples/wordcount friendly-name
 ```
 
-## Cleanup
+## Clean Up
 
-To clean up, simply `docker image rm` any images created above.
-
-Because images are immutable, they can't be deleted. It will be possible to archive them in the
-near future.
+To remove Docker images from your system, use `docker image rm` on any of the images created above.

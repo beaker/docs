@@ -1,9 +1,11 @@
 # Beaker Workspaces
 
-Workspaces are a new feature making it easier to organize and share your work. Datasets, experiments, groups, and images can all be collected into workspaces. You may want to keep together the work related to a particular paper submission, for example, or perhaps create a set of datasets to share among your colleagues.
+Workspaces organize datasets, experiments, and groups so you can share them across the company or around the world.  A key quality of workspaces is that all resources in a workspace share the same permissions.  For example, you may set up a workspace so all its contents are accessible across the company, private to just you, or available across the internet.
+
+You may want to use workspaces to organize the work related to a particular paper submission, for example, or perhaps create a set of datasets to share among your colleagues.
 
 ## Creating a Workspace
-You can create and explore workspaces by clicking on the new “Workspaces” link in the top bar. Workspaces are scoped to users and organizations, and the org selector at the top right can be used to switch contexts. For example, you may choose to put “throw-away” work into a workspace in your personal org, and datasets you want to share with colleagues in a workspace under the AI2 organization.
+You can create and explore workspaces by clicking on the new “Workspaces” link in the top bar.  Workspaces are scoped to users and organizations.  You can set the permissions under the "Preferences" tab.
 
 1. Click on Workspaces in the top bar.
 1. Click the Create New Workspace button. This modal will appear:<br>
@@ -34,9 +36,3 @@ To move items between workspaces, navigate to the source workspace, select the i
 
 ## Permissions
 Workspaces can have different permissions applied to them, which can be done through the Permissions tab if you have Full Control access to the workspace. The permissions assigned to a workspace will also control the accessibility of items within that workspace. For example, if user A grants user B write permission on their workspace, user B will also have write permissions on all items inside that workspace.
-
-## Referencing Items in workspaces
-In Q4/Q1, the Beaker team plans to revisit the way things are named. Until that happens, items in workspaces can be referenced the same way as before this feature released--by ID, or by `<account>/<name>`, where `<account>` is the owning user or organization.
-
-## Feedback
-User feedback is extremely important to the Beaker team and we encourage users to let us know how we can make features easier to use and more effective. The #beaker-users channel on Slack is a great place to provide feedback or ask for help. If you are uncomfortable raising the issue in a public Slack channel, you can contact the team via e-mail at beaker-eng@allenai.org.

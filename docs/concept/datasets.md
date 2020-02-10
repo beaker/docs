@@ -1,9 +1,8 @@
 # Datasets
 
-The following example shows how to create and use datasets. Beaker takes the view that all datasets
-are files at their core. Datasets may be one file or many, large or small; Beaker makes as few
-restrictions as possible on the shape of your data. Datasets are also immutable, ensuring that
-Beaker can retain a clean record of all data files used by an experiment.
+Datasets are immutable collections of one or more files.  Datasets can be mounted into experiments
+for data re-use and to clearly show what information was needed to run an experiment.
+The following example shows how to create and use datasets.
 
 ## Preparation: Create Some Files
 
@@ -142,5 +141,6 @@ logs emitted from the experiment should be similar to the find command above.
 
 To clean up, simply remove the `~/dataset-example` directory we created at the beginning.
 
-Because datasets are immutable, they can't be deleted. It will be possible to archive datasets in
-the near future.
+To maintain reproducible experiments, you should be cautious about deleting datasets.  That said,
+large datasets can cost a significant amount indefinately.  You can delete a dataset with
+`beaker dataset delete`.
