@@ -29,7 +29,7 @@ tasks:
         - datasetId: example/wordcount-1
           containerPath: /input/1.txt
 
-...
+# ...
 
   - name: merge
     spec:
