@@ -10,7 +10,7 @@ An experiment is the main unit of execution in Beaker.  For example, an experime
 
 Experiments have their own page and URL, allowing the results to be shared across the company or the internet.
 
-![Experiment example](../images/experiment-example.png)
+![Experiment example](../images/beaker-ex.png)
 
 ## Tasks
 
