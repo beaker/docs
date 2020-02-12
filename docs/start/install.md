@@ -50,19 +50,6 @@ To set up Beaker:
 2. When prompted for the Beaker address, enter https://beaker.org
 3. When prompted for the user token, enter your token. Your token is available from your **Settings** at [Beaker.org](https://beaker.org). To find it, when signed in to Beaker, from the top-right corner click your **user name**, **Settings**.
 
-For example:
-
-```
-% beaker configure⏎
-Beaker Configuration
-
-Press enter to keep the current value of any setting.
-Results will be saved to /Users/username/.beaker
-
-Beaker address [localhost:9027]: https://beaker.allenai.org⏎
-User token []: <your token>⏎
-```
-
 Run `beaker configure test` to check that your configuration is correct.
 
 For example:

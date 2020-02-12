@@ -143,12 +143,12 @@ This Docker CLI command instructed Docker to build an image based on the files a
 
 In later examples, we'll show you how to set up your own Dockerfile for building images. For now, simply use the provided Dockerfile that you downloaded from Github. If you want, you can view the Dockerfile's txt contents to see its base image, ENV instructions, and so on. For now, don't make any changes to it.
 
-## Create a Beaker image
+## Create a Beaker Image
 
 Now you have a Docker image of a complete local experiment's codebase and dataset. Next, create a Beaker *image* to represent this experiment and push it to Beaker.org for management and reuse.
 
 ```
-$ beaker image create -n <mymnist> mymnist
+$ beaker image create --name <mymnist> mymnist
 ```
 
 Note can have only one Beaker image called mynist. So, if you've created an mymnist image previously, change <mymnist> to a unique name, such as mymnist2. 
@@ -156,7 +156,7 @@ Note can have only one Beaker image called mynist. So, if you've created an mymn
 If you successfully create the image, you should see output such as:
 
 ```
-Pushing mymnist as mnist (bp_8ugouwgec4gn)...
+Pushing mymnist as mnist (im_8ugouwgec4gn)...
 <...preparing, waiting, etc...>
 The push refers to repository [gcr.io/ai2-beaker-core/public/bhq49ga41h4qcklhc79g]
 latest: digest: sha256:569de2a77ba779dbfddf6cc897f7abb17ef674239021b5f05e63e596aa7db5c3 size: 3058
@@ -168,11 +168,11 @@ Notice that each image is assigned a unique ID, in addition to the name we chose
 including images, can be referred to by either its name or ID. Like any object, a image can be
 renamed, but its ID is guaranteed to remain stable. The following two commands are equivalent:
 
-### Inspect the image
+### Inspect the Image
 
 ```
 $ beaker image inspect mymnist
-$ beaker image inspect bp_8ugouwgec4gn
+$ beaker image inspect im_8ugouwgec4gn
 ```
 
 Either should produce CLI output such as:
@@ -180,7 +180,7 @@ Either should produce CLI output such as:
 ```
 [
     {
-        "id": "bp_8ugouwgec4gn",
+        "id": "im_8ugouwgec4gn",
         "user": {
             "id": "<your_user_id>",
             "name": "<your_user_name>",

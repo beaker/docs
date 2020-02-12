@@ -132,7 +132,7 @@ Note can have only one Beaker image called mymnist. So, if you've created a mymn
 If you successfully create the image, you should see output such as:
 
 ```
-Pushing mymnist as mnist (bp_8ugouwgec4gn)...
+Pushing mymnist as mnist (im_8ugouwgec4gn)...
 <...preparing, waiting, etc...>
 The push refers to repository [gcr.io/ai2-beaker-core/public/bhq49ga41h4qcklhc79g]
 latest: digest: sha256:569de2a77ba779dbfddf6cc897f7abb17ef674239021b5f05e63e596aa7db5c3 size: 3058
@@ -148,7 +148,7 @@ renamed, but its ID is guaranteed to remain stable. The following two commands a
 
 ```
 $ beaker image inspect mymnist
-$ beaker image inspect bp_8ugouwgec4gn
+$ beaker image inspect im_8ugouwgec4gn
 ```
 
 Either should produce CLI output such as:
@@ -156,7 +156,7 @@ Either should produce CLI output such as:
 ```
 [
     {
-        "id": "bp_8ugouwgec4gn",
+        "id": "im_8ugouwgec4gn",
         "user": {
             "id": "<your_user_id>",
             "name": "<your_user_name>",

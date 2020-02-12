@@ -4,7 +4,7 @@ First, create an account at [beaker.org](https://beaker.org) and follow the inst
    
 Request "Scientist" or higher credentials from a Beaker admin to get authorization to create experiments.
 
-The following example [counts words](https://beaker.org/bp/bp_qbjvcda1sed7) in the text of [Moby Dick](https://beaker.org/ds/ds_1hz9k6sgxi0a).
+The following example [counts words](https://beaker.org/bp/im_qbjvcda1sed7) in the text of [Moby Dick](https://beaker.org/ds/ds_1hz9k6sgxi0a).
 
 ```bash
 beaker experiment run \
