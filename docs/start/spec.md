@@ -17,5 +17,5 @@ $ beaker experiment create \
     --source mymnist-dataset:/data \
     --result-path /output
     
-Experiment ex_lhqimp6vaffk submitted. See progress at https://beaker-pub.allenai.org/ex/ex_lhqimp6vaffk
+Experiment ex_lhqimp6vaffk submitted. See progress at https://beaker.allenai.org/ex/ex_lhqimp6vaffk
 ```

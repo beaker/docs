@@ -1,12 +1,12 @@
 # Your First Beaker Experiment 
 
-Beaker manages experiments as Docker containers combined with additional metadata to make your code and data easy to share and replicate. To show you how to do this with "real" code and data, this tutorial will show you how to train a Python Pytorch model using LeCun's MNIST dataset of images of handwritten digits.
+Beaker manages experiments as Docker containers combined with additional metadata to make your code and data easy to share and replicate. To show you how to do this with real code and data, this tutorial will show you how to train a Python Pytorch model using LeCun's MNIST dataset of images of handwritten digits.
 
 Don't worry if you don't know about Python, Pytorch, or MNIST data; you won't need to here. This exercise simply shows you how to run a full experiment with Beaker in a way that should be easy to understand. 
 
 ## Experiments on Beaker.org
 
-First, go to the [MNIST example](https://beaker-pub.allenai.org/ex/ex_zvtqxr5dlpqe) page on Beaker.org. (Sign in if you haven't already.)
+First, go to the [MNIST example](https://beaker.org/ex/ex_zvtqxr5dlpqe) page on Beaker.org. (Sign in if you haven't already.)
 
 ![Beaker page for MNIST example](../images/beaker_ex.png)
 
@@ -26,7 +26,7 @@ Next, you should use the Beaker CLI to run the same experiment from your local m
 
 For these steps to work, you must have completed [installing Beaker](install.md). When installed:
 
-1. From the existing [MNIST example](https://beaker-pub.allenai.org/ex/ex_zvtqxr5dlpqe) experiment page on Beaker.org, click the **Spec** tab.
+1. From the existing [MNIST example](https://beaker.org/ex/ex_zvtqxr5dlpqe) experiment page on Beaker.org, click the **Spec** tab.
 
 ![Spec for MNIST example](../images/ex_spec.png)
 
@@ -43,12 +43,11 @@ Make sure the experiment ID matches the specific experiment you want to re-run, 
 You should see the following output:
 
 ```bash
-Experiment ex_zvtqxr5dlpqe submitted. See progress at https://beaker-pub.allenai.org/ex/ex_zvtqxr5dlpqe
+Experiment ex_zvtqxr5dlpqe submitted. See progress at https://beaker.org/ex/ex_zvtqxr5dlpqe
 ```
 
-You can see your experiments tasks progress to completion at the URL provided by this output (for example, [https://beaker-pub.allenai.org/ex/ex_zvtqxr5dlpqe](https://beaker-pub.allenai.org/ex/ex_zvtqxr5dlpqe)).
+You can see your experiments tasks progress to completion at the URL provided by this output (for example, [https://beaker.org/ex/ex_zvtqxr5dlpqe](https://beaker.org/ex/ex_zvtqxr5dlpqe)).
 
 That's how an experiment is defined and shared by its spec, the YAML file containing the necessary metadata with which you can manage an experiment.
 
 If both of the above steps are working for you, you are ready to proceed to creating your own Beaker blueprint and dataset, which is the [next example](second.md). 
-

@@ -53,13 +53,12 @@ To set up Beaker:
 For example:
 
 ```
-% beaker configure⏎
 Beaker Configuration
 
 Press enter to keep the current value of any setting.
 Results will be saved to /Users/username/.beaker
 
-Beaker address [localhost:9027]: https://beaker-pub.allenai.org⏎
+Beaker address [https://api.beaker.org]: ⏎
 User token []: <your token>⏎
 ```
 
@@ -75,9 +74,10 @@ Authenticating with user token: <your token>
 
 Authenticated as user: "<your username>" (<your id>)
 ```
+
 ## Docker
 
-You must install Docker to use Beaker, because Beaker is built around managing experiment code contained in Docker containers.
+You must install Docker to use Beaker, because Beaker is manages experiment code using Docker containers.
 
 Install the appropriate Docker Desktop version from the [Docker site](https://www.docker.com/products/docker-desktop), following Docker's instructions.
 

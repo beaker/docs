@@ -59,7 +59,7 @@ Beaker Configuration
 Press enter to keep the current value of any setting.
 Results will be saved to /Users/username/.beaker
 
-Beaker address [localhost:9027]: https://beaker-pub.allenai.org⏎
+Beaker address [localhost:9027]: https://beaker.allenai.org⏎
 User token []: <your token>⏎
 ```
 

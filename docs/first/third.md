@@ -6,17 +6,20 @@ You'll use your existing blueprint and dataset, as defined in the [prior example
 
 # From the Command Line 
 
-Enter the following from your Terminal shell, using the This example assumes you've successfully completed [Beaker and Docker installation](install.md), and you've set up your [Beaker.org](https://www.beaker.org) account so that you can run experiments as shown in [Your First Experiment](first.md).
+Using this example assumes you've successfully completed [Beaker and Docker installation](install.md), and you've set up your [Beaker.org](https://www.beaker.org) account so that you can run experiments as shown in [Your First Experiment](first.md).
+Enter the following from your Terminal shell:
 
-https://beaker-pub.allenai.org/ex/ex_lhqimp6vaffk
+https://beaker.org/ex/ex_lhqimp6vaffk
 
-beaker experiment create \
+```
+$ beaker experiment create \
     --blueprint mymnist \
     --env EPOCH=50 \
     --source mymnist-dataset:/data \
     --result-path /output
     
-Experiment ex_lhqimp6vaffk submitted. See progress at https://beaker-pub.allenai.org/ex/ex_lhqimp6vaffk
+Experiment ex_lhqimp6vaffk submitted. See progress at https://beaker.org/ex/ex_lhqimp6vaffk
+```
 
 # Create a Blueprint and Dataset 
 
@@ -39,6 +42,7 @@ Python 3.7.2 (default, Dec 29 2018, 00:00:04)
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ```
+
 This shows your Python version, date, and so on, if successfully configured.
 
 From the Python prompt (`>>>`, above) you can verify your Pytorch installation too:
@@ -150,6 +154,7 @@ $ beaker blueprint create -n <mymnist> mymnist
 Note can have only one Beaker blueprint called mynist. So, if you've created an mymnist blueprint previously, change <mymnist> to a unique name, such as mymnist2. 
 
 If you successfully create the blueprint, you should see output such as:
+
 ```
 Pushing mymnist as mnist (bp_8ugouwgec4gn)...
 <...preparing, waiting, etc...>

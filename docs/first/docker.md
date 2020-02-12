@@ -30,7 +30,7 @@ There are a few different ways to install Beaker:
 To set up Beaker:
 
 1. Run `beaker configure`.
-2. When prompted for the Beaker address, enter https://beaker-pub.allenai.org
+2. When prompted for the Beaker address, enter https://beaker.org
 3. When prompted for the user token, enter your token (available from your **user settings** at the Beaker site.
 
 For example:
@@ -42,7 +42,7 @@ Beaker Configuration
 Press enter to keep the current value of any setting.
 Results will be saved to /Users/username/.beaker
 
-Beaker address [localhost:9027]: https://beaker-pub.allenai.org⏎
+Beaker address [localhost:9027]: https://beaker.org⏎
 User token []: <your token>⏎
 ```
 
