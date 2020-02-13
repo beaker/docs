@@ -76,29 +76,31 @@ beaker dataset inspect ds_as6t74lspoc5
 ## Inspect
 
 A dataset can be inspected with `beaker dataset inspect`, which produces a JSON representation of
-the dataset. An optional `--manifest` flag, if provided, will also produce the dataset's contents.
+the dataset.
 
 ```
-▶ beaker dataset inspect --manifest my-file-dataset
+▶ beaker dataset inspect my-file-dataset
 [
     {
         "id": "ds_as6t74lspoc5",
-        "user": {
-            ...
-        },
         "name": "my-file-dataset",
-        "created": "2018-08-06T18:00:36.235254Z",
-        "committed": "2018-08-06T18:00:36.646142Z",
-        "manifest": {
-            "id": "ds_as6t74lspoc5",
-            "single_file": true,
-            "files": [
-                {
-                    "file": "/singlefile",
-                    "size": 23,
-                    "time_last_modified": "2018-08-06T18:00:36.609Z"
-                }
-            ]
+        "owner": {
+          ...
+        },
+        "author": {
+          ...
+        },
+        "workspaceRef": {
+          ...
+        },
+        "created": "2020-02-13T23:47:10.309419Z",
+        "committed": "2020-02-13T23:47:11.413472Z",
+        "archived": false,
+        "storage": {
+            "address": "https://data.beaker.org",
+            "id": "01e10f5y3qfhe2wtkatcm7c2sp",
+            "token": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjIxYjgiLCJ0eXAiOiJKV1QifQ.eyJzY29wZXMiOlsicmVhZDpkYXRhc2V0OjAxZTEwZjV5M3FmaGUyd3RrYXRjbTdjMnNwIl0sImV4cCI6MTU4MTY4MDkxNSwiaXNzIjoiYmVha2VyIiwic3ViIjoibWljaGFlbHMifQ.Iwua7ZQrQiE4_Xm1T_likNtzgnvVXtC9QyfKgMjrAwA",
+            "tokenExpires": "2020-02-14T11:48:35.778244357Z"
         }
     }
 ]
