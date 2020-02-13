@@ -5,7 +5,7 @@ Workspaces organize datasets, experiments, and groups so you can share them acro
 You may want to use workspaces to organize the work related to a particular paper submission, for example, or perhaps create a set of datasets to share among your colleagues.
 
 ## Creating a Workspace
-You can create and explore workspaces by clicking on the new “Workspaces” link in the top bar.  Workspaces are scoped to users and organizations.  You can set the permissions under the "Preferences" tab.
+You can create and explore workspaces by clicking on the “Workspaces” link in the top bar.  Each workspace is owned by a single account, which may be a user or organization.
 
 1. Click on Workspaces in the top bar.
 1. Click the Create New Workspace button. This modal will appear:<br>
