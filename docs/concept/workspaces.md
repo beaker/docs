@@ -1,6 +1,6 @@
 # Beaker Workspaces
 
-Workspaces organize datasets, experiments, and groups so you can share them across the company or around the world.  A key quality of workspaces is that all resources in a workspace share the same permissions.  For example, you may set up a workspace so all its contents are accessible across the company, private to just you, or available across the internet.
+Workspaces organize datasets, experiments, and groups so you can share them with colleagues or the world.  All of a workspace's contents share the same permissions.  For example, you may set up a workspace so all its contents are accessible across the company, private to just you, or made public to support a published paper.
 
 You may want to use workspaces to organize the work related to a particular paper submission, for example, or perhaps create a set of datasets to share among your colleagues.
 
