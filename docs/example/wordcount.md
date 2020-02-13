@@ -1,6 +1,6 @@
 # Count words
 
-First, create an account at [beaker.org](https://beaker.org) and follow the instructions in your [account settings](https://beaker.org/user). See [Install](../start/install.md) for more options.
+First, create an account at [beaker.org](https://beaker.org) and follow the instructions in your [account settings](https://beaker.org/user). See [Install](../first/install.md) for more options.
 
 Request "Scientist" or higher credentials from a Beaker admin to get authorization to create experiments.
 
