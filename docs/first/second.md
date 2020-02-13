@@ -170,7 +170,7 @@ Either should produce CLI output such as:
 ]
 ```
 
-### Pull a image
+### Pull an Image
 
 You can pull your image to your local machine at any time with `beaker image pull`.
 
