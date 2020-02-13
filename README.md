@@ -25,4 +25,5 @@ Here is an overview of the Beaker documentation:
 * [Releases](https://github.com/allenai/beaker/releases)
 
 ## Feedback
+
 User feedback is extremely important to the Beaker team and we encourage users to let us know how we can make features easier to use and more effective. The #beaker-users channel on Slack is a great place to provide feedback or ask for help. If you are uncomfortable raising the issue in a public Slack channel, you can contact the team via e-mail at bunsen@allenai.org.
