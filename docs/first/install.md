@@ -65,7 +65,7 @@ Authenticated as user: "<your username>" (<your id>)
 
 ## Docker
 
-You must install Docker to use Beaker, because Beaker is manages experiment code using Docker containers.
+You must install Docker to use Beaker, because Beaker packages experiment code using Docker containers.
 
 Install the appropriate Docker Desktop version from the [Docker site](https://www.docker.com/products/docker-desktop), following Docker's instructions.
 
