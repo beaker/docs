@@ -2,9 +2,9 @@
 
 In this example, you'll run your experiment using your image from the CLI and also create a corresponding experiment spec.
 
-You'll use your existing image and dataset, as defined in the [prior example](second.md). So, complete that step first if needed. 
+You'll use your existing image and dataset, as defined in the [prior example](second.md). So, complete that step first if needed.
 
-# From the Command Line 
+# From the Command Line
 
 Using this example assumes you've successfully completed [Beaker and Docker installation](install.md), and you've set up your [Beaker.org](https://www.beaker.org) account so that you can run experiments as shown in [Your First Experiment](first.md).
 Enter the following from your Terminal shell:
@@ -17,13 +17,13 @@ $ beaker experiment create \
     --env EPOCH=50 \
     --source mymnist-dataset:/data \
     --result-path /output
-    
+
 Experiment ex_lhqimp6vaffk submitted. See progress at https://beaker.org/ex/ex_lhqimp6vaffk
 ```
 
-# Create a Blueprint and Dataset 
+# Create a Blueprint and Dataset
 
-In this step, you'll use existing experiment code, data, and a Docker file. You'll define your own Beaker *image*, to define and manage the experiment you will run, and a Beaker *dataset* to hold the source data. This example locally reproduces the existing MNIST experiment of the [prior example](first.md). 
+In this step, you'll use existing experiment code, data, and a Docker file. You'll define your own Beaker *image*, to define and manage the experiment you will run, and a Beaker *dataset* to hold the source data. This example locally reproduces the existing MNIST experiment of the [prior example](first.md).
 
 Don't worry if you don't know much about Python, Pytorch, or MNIST data; you don't need to. Rather, this exercise simply shows you how to run a full experiment with Beaker. You should then be able to apply these concepts to your own code, data, and experiments, to manage them with Beaker.
 
@@ -37,10 +37,10 @@ After installing, you can verify your configuration by entering `python` from yo
 
 ```
 $ python
-Python 3.7.2 (default, Dec 29 2018, 00:00:04) 
+Python 3.7.2 (default, Dec 29 2018, 00:00:04)
 [Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
 Type "help", "copyright", "credits" or "license" for more information.
->>> 
+>>>
 ```
 
 This shows your Python version, date, and so on, if successfully configured.
@@ -51,18 +51,18 @@ From the Python prompt (`>>>`, above) you can verify your Pytorch installation t
 >>> import torch; print(torch.__version__)
 1.0.0
 ```
-    
+
 Which shows your Pytorch/Torchvision version, if successfully configured.
 
 Finally, if you are new to Python for this tutorial, know you quit the Python shell (`>>>`) and return to your Terminal shell by pressing `control+d`. Make sure these configurations are set up before proceeding.
 
 ## Get the existing code and data
 
-For this tutorial, use the code from [https://github.com/beaker/mnist-example](https://github.com/beaker/mnist-example). 
+For this tutorial, use the code from [https://github.com/beaker/mnist-example](https://github.com/beaker/mnist-example).
 
-1. Download/clone https://github.com/beaker/mnist-example. An easy way to do this is to click **Clone or download** from the GitHub page and the **Download** to download the ZIP archive. You'll want to run this code from a directory where you have read/write permission, so if needed, extract the ZIP to such a location (for example, to `~/Documents/mnist-example-master`). 
+1. Download/clone https://github.com/beaker/mnist-example. An easy way to do this is to click **Clone or download** from the GitHub page and the **Download** to download the ZIP archive. You'll want to run this code from a directory where you have read/write permission, so if needed, extract the ZIP to such a location (for example, to `~/Documents/mnist-example-master`).
 
-2. Download the dataset from from [here](https://beaker.org/ds/ds_kf6v919aq7hk/details) to a /data subdirectory of your `mnist-example-master` directory (for example, `~/Documents/mnist-example-master/data`). The *dataset* contains the files, or directories of files, referenced by the code of the experiment. A convenient way to download the MNIST dataset from Beaker is to go to your `mnist-example-master` directory from your Terminal shell, then run: 
+2. Download the dataset from from [here](https://beaker.org/ds/ds_kf6v919aq7hk/details) to a /data subdirectory of your `mnist-example-master` directory (for example, `~/Documents/mnist-example-master/data`). The *dataset* contains the files, or directories of files, referenced by the code of the experiment. A convenient way to download the MNIST dataset from Beaker is to go to your `mnist-example-master` directory from your Terminal shell, then run:
 
 ```
 $ beaker dataset fetch --output=./data ds_kf6v919aq7hk
@@ -121,9 +121,9 @@ If this doesn't run for you, double-check your Python (or perhaps Beaker) config
 
 All of the above simply represents an experiment's code and dataset running locally, as you would do without using Beaker. This code produces locally what the [prior example](first.md) produced using the Beaker cloud. (This is likely backwards from how you would first create a local experiment, to then add it to Beaker not the other way around...but for tutorial purposes, you can pretend that the mnist code and data is only local, so you can now learn how to *Beakerize* it.)
 
-The next step towards making this code and data managed in Beaker is to build a corresponding a Docker image. 
+The next step towards making this code and data managed in Beaker is to build a corresponding a Docker image.
 
-## Build a Docker image 
+## Build a Docker image
 
 To build the docker image from the existing Dockerfile (which you cloned from Github), from the command line run:
 
@@ -139,7 +139,7 @@ You should see the Docker steps complete, and conclude successfully with a messa
 Successfully tagged mymnist:latest
 ```
 
-This Docker CLI command instructed Docker to build an image based on the files at the current directory, using the Dockerfile that you cloned to this location, and you tagged it `mynist`. 
+This Docker CLI command instructed Docker to build an image based on the files at the current directory, using the Dockerfile that you cloned to this location, and you tagged it `mynist`.
 
 In later examples, we'll show you how to set up your own Dockerfile for building images. For now, simply use the provided Dockerfile that you downloaded from Github. If you want, you can view the Dockerfile's txt contents to see its base image, ENV instructions, and so on. For now, don't make any changes to it.
 
@@ -151,7 +151,7 @@ Now you have a Docker image of a complete local experiment's codebase and datase
 $ beaker image create --name <mymnist> mymnist
 ```
 
-Note can have only one Beaker image called mynist. So, if you've created an mymnist image previously, change <mymnist> to a unique name, such as mymnist2. 
+Note can have only one Beaker image called mynist. So, if you've created an mymnist image previously, change <mymnist> to a unique name, such as mymnist2.
 
 If you successfully create the image, you should see output such as:
 

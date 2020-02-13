@@ -26,7 +26,7 @@ There are a few different ways to install Beaker:
     ```bash
     tar -xvzf beaker_*.tar.gz -C /usr/local/bin
     ```
-    
+
     Place the binary executable in your PATH (e.g., /usr/local/bin/ or ~/bin).
 
 - macOS users can install Beaker through [Homebrew](https://brew.sh/) with a custom tap:
@@ -41,7 +41,7 @@ There are a few different ways to install Beaker:
     ```bash
     go get -u github.com/allenai/beaker/...
     ```
-  
+
 ## Configure and Test
 
 To set up Beaker:
@@ -71,4 +71,4 @@ Install the appropriate Docker Desktop version from the [Docker site](https://ww
 
 ## Next step
 
-When you have your Beaker.org account, Beaker, and Docker each installed and configured, proceed to [your first experiment](first.md) to learn the fundamentals of experiments with Beaker. 
+When you have your Beaker.org account, Beaker, and Docker each installed and configured, proceed to [your first experiment](first.md) to learn the fundamentals of experiments with Beaker.

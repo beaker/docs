@@ -60,7 +60,7 @@ Fixed values are expressed as a scalar of any type.
 See the following sample schema for details:
 ```yaml
 # If omitted, the seed is set to the current unix timestamp.
-seed: <int> 
+seed: <int>
 parameters:
   FIXED_VALUE: <any scalar>
   UNIFORM_INT:

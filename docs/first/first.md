@@ -1,8 +1,8 @@
-# Your First Beaker Experiment 
+# Your First Beaker Experiment
 
 Beaker manages experiments as Docker containers combined with additional metadata to make your code and data easy to share and replicate. To show you how to do this with real code and data, this tutorial will show you how to train a Python Pytorch model using LeCun's MNIST dataset of images of handwritten digits.
 
-Don't worry if you don't know about Python, Pytorch, or MNIST data; you won't need to here. This exercise simply shows you how to run a full experiment with Beaker in a way that should be easy to understand. 
+Don't worry if you don't know about Python, Pytorch, or MNIST data; you won't need to here. This exercise simply shows you how to run a full experiment with Beaker in a way that should be easy to understand.
 
 ## Experiments on Beaker.org
 
@@ -10,7 +10,7 @@ First, go to the [MNIST example](https://beaker.org/ex/ex_zvtqxr5dlpqe) page on 
 
 ![Beaker page for MNIST example](../images/beaker_ex.png)
 
-You can see an existing experiment, already provided by Beaker. You can click around, to see Beaker features such as its **Experiment Graph** and **Spec**. 
+You can see an existing experiment, already provided by Beaker. You can click around, to see Beaker features such as its **Experiment Graph** and **Spec**.
 
 Re-run this experiment in the Beaker clould by simply clicking **Re-run** in the top-right corner of the experiment page. If you do so, don't modify the experiment spec; just confirm by clicking **Re-run** from **Re-run Experiment**.
 
@@ -50,4 +50,4 @@ You can see your experiments tasks progress to completion at the URL provided by
 
 That's how an experiment is defined and shared by its spec, the YAML file containing the necessary metadata with which you can manage an experiment.
 
-If both of the above steps are working for you, you are ready to proceed to creating your own Beaker blueprint and dataset, which is the [next example](second.md). 
+If both of the above steps are working for you, you are ready to proceed to creating your own Beaker image and dataset, which is the [next example](second.md).
