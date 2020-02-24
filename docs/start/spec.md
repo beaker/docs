@@ -11,7 +11,7 @@ Enter the following from your Terminal shell, using the This example assumes you
 https://beaker.org/ex/ex_lhqimp6vaffk
 
 ```
-$ beaker experiment create \
+$ beaker experiment run \
     --image mymnist \
     --env EPOCH=50 \
     --source mymnist-dataset:/data \
