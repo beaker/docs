@@ -99,7 +99,7 @@ the dataset.
         "storage": {
             "address": "https://data.beaker.org",
             "id": "01e10f5y3qfhe2wtkatcm7c2sp",
-            "token": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjIxYjgiLCJ0eXAiOiJKV1QifQ.eyJzY29wZXMiOlsicmVhZDpkYXRhc2V0OjAxZTEwZjV5M3FmaGUyd3RrYXRjbTdjMnNwIl0sImV4cCI6MTU4MTY4MDkxNSwiaXNzIjoiYmVha2VyIiwic3ViIjoibWljaGFlbHMifQ.Iwua7ZQrQiE4_Xm1T_likNtzgnvVXtC9QyfKgMjrAwA",
+            "token": "...",
             "tokenExpires": "2020-02-14T11:48:35.778244357Z"
         }
     }
