@@ -26,7 +26,7 @@ Next, you should use the Beaker CLI to run the same experiment from your local m
 
 For these steps to work, you must have completed [installing Beaker](install.md). When installed:
 
-1. From the existing [MNIST example](https://beaker.org/ex/ex_zvtqxr5dlpqe) experiment page on Beaker.org, click the **Spec** tab.
+1. From the existing [MNIST example](https://beaker.org/ex/ex_z550sk9sz1ob) experiment page on Beaker.org, click the **Spec** tab.
 
 ![Spec for MNIST example](../images/ex_spec.png)
 
@@ -35,19 +35,18 @@ For these steps to work, you must have completed [installing Beaker](install.md)
 3. From the command line at this directory, enter:
 
 ```bash
-beaker experiment create -f ex_zvtqxr5dlpqe.yaml
+beaker experiment create -f experiment.yaml
 ```
-
-Make sure the experiment ID matches the specific experiment you want to re-run, exactly. This ID is unique to every experiment run.
 
 You should see the following output:
 
 ```bash
-Experiment ex_zvtqxr5dlpqe submitted. See progress at https://beaker.org/ex/ex_zvtqxr5dlpqe
+Experiment <experiment_id> submitted. See progress at https://beaker.org/ex/<experiment_id>
 ```
+The resulting experiment ID is unique to every experiment run.
 
-You can see your experiments tasks progress to completion at the URL provided by this output (for example, [https://beaker.org/ex/ex_zvtqxr5dlpqe](https://beaker.org/ex/ex_zvtqxr5dlpqe)).
+You can see your experiments tasks progress to completion at the URL provided by this output (for example, [https://beaker.org/ex/ex_z550sk9sz1ob](https://beaker.org/ex/ex_z550sk9sz1ob)).
 
 That's how an experiment is defined and shared by its spec, the YAML file containing the necessary metadata with which you can manage an experiment.
 
-If both of the above steps are working for you, you are ready to proceed to creating your own Beaker blueprint and dataset, which is the [next example](image.md). 
+If both of the above steps are working for you, you are ready to proceed to creating your own Beaker image and dataset, which is the [next example](image.md). 
