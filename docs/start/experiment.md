@@ -6,7 +6,7 @@ Don't worry if you don't know about Python, Pytorch, or MNIST data; you won't ne
 
 ## Experiments on Beaker.org
 
-First, go to the [MNIST example](https://beaker.org/ex/ex_zvtqxr5dlpqe) page on Beaker.org. (Sign in if you haven't already.)
+First, go to the [MNIST example](https://beaker.org/ex/ex_z550sk9sz1ob) page on Beaker.org. (Sign in if you haven't already.)
 
 ![Beaker page for MNIST example](../images/beaker_ex.png)
 
