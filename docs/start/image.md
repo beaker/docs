@@ -67,22 +67,22 @@ Some environment variables must be exported for the Python code to run.
 
 1. Export the python path:
 
-  ```
-  $ export PYTHONPATH=.
-  ```
+   ```
+   $ export PYTHONPATH=.
+   ```
 
 2. Set and export the EPOCH environment variable, required by this experiment:
 
-  ```
-  $ EPOCH=10
-  $ export EPOCH
-  ```
+   ```
+   $ EPOCH=10
+   $ export EPOCH
+   ```
 
 3. From your `mnist-example-master` directory, run the main program with Python 3:
 
-  ```
-  $ python3 beaker_pytorch/main.py
-  ```
+   ```
+   $ python3 beaker_pytorch/main.py
+   ```
 
 You should see the code run, then conclude with a message such as:
 
