@@ -6,7 +6,7 @@ Don't worry if you don't know about Python, Pytorch, or MNIST data; you won't ne
 
 ## Experiments on Beaker.org
 
-First, go to the [MNIST example](https://beaker.org/ex/ex_z550sk9sz1ob) page on Beaker.org. (Sign in if you haven't already.)
+First, go to the [MNIST example](https://beaker.org/ex/ex_kjkr81zmbfio) page on Beaker.org. (Sign in if you haven't already.)
 
 ![Beaker page for MNIST example](../images/beaker_ex.png)
 
@@ -26,7 +26,7 @@ Next, you should use the Beaker CLI to run the same experiment from your local m
 
 For these steps to work, you must have completed [installing Beaker](install.md). When installed:
 
-1. From the existing [MNIST example](https://beaker.org/ex/ex_z550sk9sz1ob) experiment page on Beaker.org, click the **Spec** tab.
+1. From the existing [MNIST example](https://beaker.org/ex/ex_kjkr81zmbfio) experiment page on Beaker.org, click the **Spec** tab.
 
 ![Spec for MNIST example](../images/ex_spec.png)
 
@@ -46,7 +46,7 @@ Experiment <experiment_id> submitted. See progress at https://beaker.org/ex/<exp
 
 The resulting experiment ID is unique to every experiment run.
 
-You can see your experiments tasks progress to completion at the URL provided by this output (for example, [https://beaker.org/ex/ex_z550sk9sz1ob](https://beaker.org/ex/ex_z550sk9sz1ob)).
+You can see your experiments tasks progress to completion at the URL provided by this output (for example, [https://beaker.org/ex/ex_kjkr81zmbfio](https://beaker.org/ex/ex_kjkr81zmbfio)).
 
 That's how an experiment is defined and shared by its spec, the YAML file containing the necessary metadata with which you can manage an experiment.
 
