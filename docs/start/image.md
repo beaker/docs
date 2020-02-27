@@ -220,50 +220,36 @@ $ beaker dataset inspect ds_q76gp0s33d01
 ### Inspect the dataset
 
 A dataset can be inspected with `beaker dataset inspect`, which produces a JSON representation of
-the dataset. An optional `--manifest` flag, if provided, will also produce the dataset's contents.
+the dataset.
 
 ```
-$ beaker dataset inspect --manifest mymnist-dataset
+$ beaker dataset inspect mymnist-dataset
 [
     {
-        "id": "ds_q76gp0s33d01",
-        "user": {
-            "id": "<your_user_id>",
-            "name": "<your_user_name>",
-            "display_name": ""
-        },
+        "id": "ds_9ux8avul9w7k",
         "name": "mymnist-dataset",
-        "created": "2019-02-25T22:50:57.793211Z",
-        "committed": "2019-02-25T22:51:21.968051Z",
-        "manifest": {
-            "id": "ds_q76gp0s33d01",
-            "files": [
-                {
-                    "file": "/.DS_Store",
-                    "size": 6148,
-                    "time_last_modified": "2019-02-25T22:50:57.98Z"
-                },
-                {
-                    "file": "/t10k-images-idx3-ubyte",
-                    "size": 7840016,
-                    "time_last_modified": "2019-02-25T22:51:02.019Z"
-                },
-                {
-                    "file": "/t10k-labels-idx1-ubyte",
-                    "size": 10008,
-                    "time_last_modified": "2019-02-25T22:51:02.418Z"
-                },
-                {
-                    "file": "/train-images-idx3-ubyte",
-                    "size": 47040016,
-                    "time_last_modified": "2019-02-25T22:51:21.097Z"
-                },
-                {
-                    "file": "/train-labels-idx1-ubyte",
-                    "size": 60008,
-                    "time_last_modified": "2019-02-25T22:51:21.644Z"
-                }
-            ]
+        "owner": {
+            "id": "us_wvnghctl47k0",
+            "name": "ai2",
+            "displayName": "AI2"
+        },
+        "author": {
+            "id": "us_7ay01can5lmg",
+            "name": "michaels",
+            "displayName": "Michael Schmitz"
+        },
+        "workspaceRef": {
+            "id": "us_wvnghctl47k0/01DQ8VCF2M5ET36Y87QF3HK10W",
+            "name": "ai2/MichaelSchmitz"
+        },
+        "created": "2020-02-27T23:10:05.842869Z",
+        "committed": "2020-02-27T23:12:06.801955Z",
+        "archived": false,
+        "storage": {
+            "address": "https://data.beaker.org",
+            "id": "01e24em3s4d82e571p01hpk4cx",
+            "token": "...",
+            "tokenExpires": "2020-02-28T11:13:24.378467869Z"
         }
     }
 ]
