@@ -36,9 +36,9 @@ Finally, if you are new to Python for this tutorial, know you quit the Python sh
 
 For this tutorial, use the code from [https://github.com/beaker/mnist-example](https://github.com/beaker/mnist-example).
 
-1. Download/clone https://github.com/beaker/mnist-example. An easy way to do this is to click **Clone or download** from the GitHub page and the **Download** to download the ZIP archive. You'll want to run this code from a directory where you have read/write permission, so if needed, extract the ZIP to such a location (for example, to `~/Documents/mnist-example-master`).
+1. Download https://github.com/beaker/mnist-example to your machine.
 
-2. Download the dataset from from [here](https://beaker.org/ds/ds_kf6v919aq7hk/details) to a /data subdirectory of your `mnist-example-master` directory (for example, `~/Documents/mnist-example-master/data`). The *dataset* contains the files, or directories of files, referenced by the code of the experiment. A convenient way to download the MNIST dataset from Beaker is to go to your `mnist-example-master` directory from your Terminal shell, then run:
+2. Download the dataset from from [here](https://beaker.org/ds/ds_kf6v919aq7hk/details) to a subdirectory named `data` in `mnist-example-master`.  The *dataset* contains the files referenced by the code of the experiment. A convenient way to download the MNIST dataset from Beaker is to go to your `mnist-example-master` directory from your Terminal shell, then run:
 
   ```
   $ beaker dataset fetch --output=./data ds_kf6v919aq7hk
@@ -74,8 +74,7 @@ Some environment variables must be exported for the Python code to run.
 2. Set and export the EPOCH environment variable, required by this experiment:
 
    ```
-   $ EPOCH=10
-   $ export EPOCH
+   $ export EPOCH=10
    ```
 
 3. From your `mnist-example-master` directory, run the main program with Python 3:
@@ -95,9 +94,9 @@ By default, this code puts results in an `/output` subdirectory, in `metrics.jso
 
 If this doesn't run for you, double-check your Python (or perhaps Beaker) configurations; note that Python 3.6.5 or later is required by this experiment.
 
-All of the above simply represents an experiment's code and dataset running locally, as you would do without using Beaker. This code produces locally what the [prior example](experiment.md) produced using the Beaker cloud. (This is likely backwards from how you would first create a local experiment, to then add it to Beaker not the other way around...but for tutorial purposes, you can pretend that the mnist code and data is only local, so you can now learn how to *Beakerize* it.)
+All of the above simply represents an experiment's code and dataset running locally, as you would do without using Beaker. This code produces locally what the [prior example](experiment.md) produced using the Beaker cloud.
 
-The next step towards making this code and data managed in Beaker is to build a corresponding a Docker image.
+The next step towards packaging this code and data so it can be run in Beaker is to build a corresponding a Docker image.
 
 ## Build a Docker image
 
