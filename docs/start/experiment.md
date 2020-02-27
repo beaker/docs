@@ -34,16 +34,17 @@ For these steps to work, you must have completed [installing Beaker](install.md)
 
 3. From the command line at this directory, enter:
 
-```bash
-beaker experiment create -f experiment.yaml
-```
+    ```bash
+    beaker experiment create -f experiment.yaml
+    ```
 
-You should see the following output:
+    You should see the following output:
 
-```bash
-Experiment <experiment_id> submitted. See progress at https://beaker.org/ex/<experiment_id>
-```
-The resulting experiment ID is unique to every experiment run.
+    ```bash
+    Experiment <experiment_id> submitted. See progress at https://beaker.org/ex/<experiment_id>
+    ```
+
+    The resulting experiment ID is unique to every experiment run.
 
 You can see your experiments tasks progress to completion at the URL provided by this output (for example, [https://beaker.org/ex/ex_z550sk9sz1ob](https://beaker.org/ex/ex_z550sk9sz1ob)).
 
