@@ -58,11 +58,11 @@ tasks:
 
   # (optional) Set dependencies between tasks.
   dependsOn:
-    # (required) Name the task to depend on.
-    parentName: my-first-task
+      # (required) Name the task to depend on.
+    - parentName: my-first-task
 
-    # (optional) If set, mount the result of that task to the following directory.
-    containerPath: /path/to/input
+      # (optional) If set, mount the result of that task to the following directory.
+      containerPath: /path/to/input
 ```
 
 ## From the Command Line
