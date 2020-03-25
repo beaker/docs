@@ -25,9 +25,15 @@ Results are placed in `/output`
 
 ## Example usage
 
-```bash
-beaker experiment run \
-  --image wordcount \
-  --source examples/moby:/input \
-  --result-path /output
+Run the following experiment with `beaker experiment create`.
+
+```yaml
+tasks:
+- name: count-words
+  spec:
+    image: mywordcount
+    resultPath: /output
+    datasetMounts:
+    - datasetId: examples/moby
+      containerPath: /input
 ```

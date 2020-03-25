@@ -128,12 +128,23 @@ as a Beaker experiment. The code for this experiment's image can be found
 [here](../examples/list-files).
 
 ```bash
-beaker experiment run \
-    --image example/list-files \
-    --env LIST_DIR=/data \
-    --source my-file-dataset:/data/single \
-    --source my-dir-dataset:/data/multi \
-    --result-path /results
+cat > find.yaml << EOF
+tasks:
+- name: list-files
+  spec:
+    image: examples/list-files
+    resultPath: /results
+    env:
+      LIST_DIR: /data
+    datasetMounts:
+    - datasetId: my-file-dataset
+      containerPath: /data/single
+    - datasetId: my-dir-dataset
+      containerPath: /data/single
+EOF
+```
+```
+beaker experiment create -f find.yaml
 ```
 
 This command will print a URL to your experiment, which should complete momentarily. Observe the
