@@ -44,24 +44,8 @@ There are a few different ways to install Beaker:
   
 ## Configure and Test
 
-To set up Beaker:
+To set up Beaker, log in to [beaker.org](https://beaker.org) and follow the instructions in your [account](https://beaker.org/user) page.
 
-1. Run `beaker configure`.
-2. When prompted for the Beaker address, enter https://beaker.org
-3. When prompted for the user token, enter your token. Your token is available from your **Settings** at [Beaker.org](https://beaker.org). To find it, when signed in to Beaker, from the top-right corner click your **user name**, **Settings**.
-
-Run `beaker configure test` to check that your configuration is correct.
-
-For example:
-
-```
-% beaker configure test⏎
-Beaker Configuration Test
-
-Authenticating with user token: <your token>
-
-Authenticated as user: "<your username>" (<your id>)
-```
 ## Docker
 
 You must install Docker to use Beaker, because Beaker is built around managing experiment code contained in Docker containers.
