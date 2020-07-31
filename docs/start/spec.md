@@ -18,8 +18,11 @@ tasks:
 
   # Spec describes the specifics of a process to run.
   spec:
-    # (required) The code to run.
+    # (optional) The Beaker image name or ID. Either this or dockerImage is required.
     image: myaccount/myimage
+
+    # (optional) The DockerHub image tag. Either this or image is required.
+    dockerImage: busybox:latest 
 
     # (required) Where results will be placed.
     # Beaker automatically uploads files as the job runs.
