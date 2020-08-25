@@ -6,16 +6,17 @@ rapid, reproducible research.
 Here is an overview of the Beaker documentation:
 
 ## Get Started
+
 * [Install](/docs/start/install.md)
 * [Your First Experiment](/docs/start/experiment.md)
 * [Image and dataset](/docs/start/image.md)
-* [Experiment spec](/docs/start/spec.md)
 
 ## Learn Concepts
 
 * [Images](/docs/concept/images.md)
 * [Datasets](/docs/concept/datasets.md)
 * [Experiments](/docs/concept/experiments.md)
+* [Experiment Spec](/docs/concept/experiments.md#spec-format)
 * [Groups](/docs/concept/groups.md)
 * [Workspaces](/docs/concept/workspaces.md)
 
