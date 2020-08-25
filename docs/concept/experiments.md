@@ -33,7 +33,7 @@ tasks:
     image:
       docker: busybox:latest
     command: ['/bin/sh', '-c']
-    arguments: ['echo "Hello world!"']
+    arguments: ['echo Hello world!']
     result: # Required even if the task produces no files.
       path: '/unused'
 ```
@@ -48,7 +48,6 @@ pipeline of tasks to run.
 | version | string | Yes | Must be `v2-alpha` |
 | description | string | No | Long-form explanation for an experiment |
 | tasks | [Task](#task) \[\] | Yes | Specifications for each process to run |
-| context | [Context](#context) | No | Context defines a default execution environment for all tasks. Required fields may be omitted if each task has defined its own context. |
 
 ### Task
 
@@ -63,8 +62,8 @@ Task describes a single job, or process.
 | envVars | map\[string, string\] | No | Environment variables set before the task is run |
 | datasets | [DataMount](#datamount) \[\] | No | External data sources mounted into the task as files |
 | result | [ResultSpec](#resultspec) | Yes | Where the task will place output files |
-| context | [Context](#context) | Yes | Context describes how and where this task should run. Some fields are required and must be set in either the experiment or the task. If a field is set in both, the task's takes precedence. |
 | resources | [TaskResources](#taskresources) | No | External hardware requirements, such as memory or GPU devices |
+| context | [Context](#context) | Yes | Context describes how and where this task should run. |
 
 \* Though tasks may be anonymous for compatibility reasons, we recommend always
 assigning a name. 
@@ -121,7 +120,7 @@ future date.
 | cluster | string | Yes | Name or ID of a Beaker cluster on which the task should run. |
 | priority | string | No | Set priority to change the urgency with which a task will run.<br><br>Values may be `low`, `normal`, or `high`. Tasks with higher priority are placed ahead of tasks with lower priority in the queue.<br><br>Priority may also be elevated to `urgent` through UI. |
 
-## TaskResources
+### TaskResources
 
 TaskResources describe minimum external hardware requirements which must be available for a task to
 run. Beaker guarantees a task will not run until all defined requirements are met. A task may be
@@ -133,3 +132,70 @@ given greater resources than defined here.
 | gpuCount | int | No | Minimum number of GPU-cores. It must be non-negative. |
 | memory | string | No | Minimum available system memory as a number with unit suffix. `memory` must match `memoryBytes` exactly if both are set.<br><br>Examples: `2.5GiB`, `10240m`. |
 | memoryBytes | int | No | Minimum available system memory as an exact byte count. `memoryBytes` must match `memory` exactly if both are set. |
+
+## Older Spec Formats
+
+### V1
+
+The following example outlines most features of the current experiment spec.
+
+```yaml
+version: v1
+tasks:
+- name: my-first-task
+
+  # (required) Cluster sets where the task should run.
+  # See 'beaker cluster create'
+  cluster: ai2/my-cluster
+
+  # Spec describes the specifics of a process to run.
+  spec:
+    # (optional) The Beaker image name or ID. Either this or dockerImage is required.
+    image: myaccount/myimage
+
+    # (optional) The DockerHub image tag. Either this or image is required.
+    dockerImage: busybox:latest 
+
+    # (required) Where results will be placed.
+    # Beaker automatically uploads files as the job runs.
+    resultPath: /path/to/results
+
+    # (optional) Override the default command in the image.
+    args: ['python', '-u', '/code/run.py']
+
+    # (optional) Environment variables as a key/value map.
+    env:
+      A_NUMBER: '0.5'
+      A_STRING: foobar
+      # ...
+
+    # (optional) Mount datasets as directories into the task.
+    datasetMounts:
+      - datasetId: training-files
+        containerPath: /traindata
+
+      # Mount '/foo.yaml' from a config dataset to '/path/to/config.yml'.
+      # The subPath field mounts files or subdirectories within a dataset.
+      - datasetId: config-dataset 
+        subPath: foo.yaml
+        containerPath: /path/to/config.yml
+
+    # (optional) Set minimum resource requirements for larger tasks.
+    # All fields are optional, and any number can be set.
+    requirements:
+      memory: '7.5GiB' # number followed by unit suffix
+      cpuCount: 1.5    # number of logical cores
+      gpuCount: 2      # must be an integer
+
+- name: my-second-task
+  spec:
+    # ...
+
+  # (optional) Set dependencies between tasks.
+  dependsOn:
+      # (required) Name the task to depend on.
+    - parentName: my-first-task
+
+      # (optional) If set, mount the result of that task to the following directory.
+      containerPath: /path/to/input
+```

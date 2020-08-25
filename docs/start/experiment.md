@@ -10,15 +10,17 @@ For these instructions to work, you must have completed [installing Beaker](inst
 
 1. From the existing [MNIST example](https://beaker.org/ex/ex_kjkr81zmbfio) experiment page on Beaker.org, click the **Spec** tab.
 
-![Spec for MNIST example](../images/ex_spec.png)
+   ![Spec for MNIST example](../images/ex_spec.png)
+
+   The spec format is described in more detail [here](../concept/experiments.md#spec-format)
 
 2. Click **Download** to save the experiment's YAML spec file to a location on your local hard drive.
 
 3. From the command line at this directory, enter:
 
-    ```bash
-    beaker experiment create -f experiment.yaml
-    ```
+   ```bash
+   beaker experiment create -f experiment.yaml
+   ```
 
 You should see the following output:
 

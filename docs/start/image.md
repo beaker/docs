@@ -269,4 +269,7 @@ Downloading dataset ds_q76gp0s33d01 to directory fetched/ ... done.
 
 You already have this data, since you just created this dataset by uploading it. But, you could now clean up your local system by removing your local files, then restore your dataset from Beaker in the future with `beaker dataset fetch`. Or, easily share with others or migrate an experiment to a new machine.
 
-If all of the above is working for you, you should proceed to create your own experiment spec, which is the [next example](spec.md).
+If all of the above is working for you, that's it! See the detailed
+[spec](../concept/experiments.md#spec-format) documentation to write your own experiments.
+
+Happy Beakering. :)
