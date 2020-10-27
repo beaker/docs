@@ -129,18 +129,19 @@ as a Beaker experiment. The code for this experiment's image can be found
 
 ```bash
 cat > find.yaml << EOF
+version: v2-alpha
 tasks:
 - name: list-files
-  spec:
-    image: examples/list-files
-    resultPath: /results
-    env:
-      LIST_DIR: /data
-    datasetMounts:
-    - datasetId: my-file-dataset
-      containerPath: /data/single
-    - datasetId: my-dir-dataset
-      containerPath: /data/single
+  image: 
+    beaker: examples/list-files
+  envVars:
+    LIST_DIR: /data
+  datasets:
+  - mountPath: /data
+    source:
+      beaker: my-account/my-dataset
+  result:
+    path: /results
 EOF
 ```
 ```

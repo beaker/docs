@@ -29,13 +29,13 @@ written in YAML or JSON, as in the following example.
 version: v2-alpha
 description: A simple 'hello world' example.
 tasks:
-  - name: echo
-    image:
-      docker: busybox:latest
-    command: ['/bin/sh', '-c']
-    arguments: ['echo Hello world!']
-    result: # Required even if the task produces no files.
-      path: '/unused'
+- name: echo
+  image:
+    docker: busybox:latest
+  command: ['/bin/sh', '-c']
+  arguments: ['echo Hello world!']
+  result: # Required even if the task produces no files.
+    path: '/unused'
 ```
 
 ### Experiment

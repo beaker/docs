@@ -28,12 +28,15 @@ Results are placed in `/output`
 Run the following experiment with `beaker experiment create`.
 
 ```yaml
+version: v2-alpha
 tasks:
 - name: count-words
-  spec:
-    image: mywordcount
-    resultPath: /output
-    datasetMounts:
-    - datasetId: examples/moby
-      containerPath: /input
+  image:
+    beaker: mywordcount
+  datasets:
+  - mountPath: /input
+    source:
+      beaker: examples/moby
+  result:
+    path: /output
 ```
