@@ -17,16 +17,10 @@ This example uses two images:
 To run an experiment with multiple tasks, you must define an experiment specification in YAML.
 The full spec is available [here](./parallel-wordcount.yml).
 
-```yaml
-version: v2-alpha
-description: Parallel wordcount
-# ...
-```
-
 Run the experiment using `beaker experiment create`:
 
 ```
-▶ beaker experiment create -f parallel-wordcount.yaml
+▶ beaker experiment create -f parallel-wordcount.yml
 Experiment ex_k6biwrvfcgbu submitted. See progress at http://beaker.allenai.org/ex/ex_k6biwrvfcgbu
 ```
 
