@@ -19,6 +19,7 @@ Here is an overview of the Beaker documentation:
 * [Experiment Spec](/docs/concept/experiments.md#spec-format)
 * [Groups](/docs/concept/groups.md)
 * [Workspaces](/docs/concept/workspaces.md)
+* [Secrets](/docs/concept/secrets.md)
 
 ## Resources
 
