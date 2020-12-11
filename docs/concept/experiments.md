@@ -59,7 +59,7 @@ Task describes a single job, or process.
 | image | [ImageSource](#imagesource) | Yes | A base image to run, usually built with Docker |
 | command | string \[\] | No | Command is the full shell command to run as a list of separate arguments. If omitted, the image's default command is used, for example Docker's `ENTRYPOINT` directive. If set, default commands such as Docker's `ENTRYPOINT` and `CMD` directives are ignored.<br><br>Example: `["python", "-u", "main.py"]` |
 | arguments | string \[\] | No | Arguments are appended to the `command` and replace default arguments such as Docker's `CMD` directive. If `command` is omitted, arguments are appended to the default command, Docker's `ENTRYPOINT` directive.<br><br> Example: If Command is `["python", "-u", "main.py"]`, specifying arguments `["--quiet", "some-arg"]` will run the command `python -u main.py --quiet some-arg`. |
-| envVars | [EnvVar](#envvar) \[\] | No | List of environmeent variables passed to the container |
+| envVars | [EnvVar](#envvar) \[\] | No | List of environment variables passed to the container |
 | datasets | [DataMount](#datamount) \[\] | No | External data sources mounted into the task as files |
 | result | [ResultSpec](#resultspec) | Yes | Where the task will place output files |
 | resources | [TaskResources](#taskresources) | No | External hardware requirements, such as memory or GPU devices |
