@@ -59,7 +59,7 @@ Task describes a single job, or process.
 | image | [ImageSource](#imagesource) | Yes | A base image to run, usually built with Docker |
 | command | string \[\] | No | Command is the full shell command to run as a list of separate arguments. If omitted, the image's default command is used, for example Docker's `ENTRYPOINT` directive. If set, default commands such as Docker's `ENTRYPOINT` and `CMD` directives are ignored.<br><br>Example: `["python", "-u", "main.py"]` |
 | arguments | string \[\] | No | Arguments are appended to the `command` and replace default arguments such as Docker's `CMD` directive. If `command` is omitted, arguments are appended to the default command, Docker's `ENTRYPOINT` directive.<br><br> Example: If Command is `["python", "-u", "main.py"]`, specifying arguments `["--quiet", "some-arg"]` will run the command `python -u main.py --quiet some-arg`. |
-| envVars | map\[string, string\] | No | Environment variables set before the task is run |
+| envVars | [EnvVar](#envvar) \[\] | No | List of environmeent variables passed to the container |
 | datasets | [DataMount](#datamount) \[\] | No | External data sources mounted into the task as files |
 | result | [ResultSpec](#resultspec) | Yes | Where the task will place output files |
 | resources | [TaskResources](#taskresources) | No | External hardware requirements, such as memory or GPU devices |
@@ -80,9 +80,19 @@ download, this image immediately before running the task.
 
 \* Exactly one field must be defined.
 
+### EnvVar
+
+An EnvVar defines an environment variable within a task's container.
+
+| Field | Type | Required? | Description |
+| ----- | ---- | :-------: | ----------- |
+| name | string | Yes | Name of the environment variable following Unix rules. Environment variable names are case sensitive and must be unique. |
+| value | string | No | Literal value which can include spaces and special characters. Defaults to "" if no other source is set. |
+| secret | string | No | Source the enviroment variable from a secret in the experiment's workspace. |
+
 ### DataMount
 
-DataMount describes how to mount a dataset into a task. 
+DataMount describes how to mount a dataset into a task. All datasets are mounted read-only.
 
 | Field | Type | Required? | Description |
 | ----- | ---- | :-------: | ----------- |
@@ -94,10 +104,13 @@ DataMount describes how to mount a dataset into a task.
 
 | Field | Type | Required? | Description |
 | ----- | ---- | :-------: | ----------- |
-| beaker | string | No\* | Name or ID of a [Beaker dataset](./datasets.md) |
+| beaker | string | No\* | Name or ID of a [Beaker dataset](./datasets.md). Beaker datasets provide the best download performance and are preferred for frequently used datasets. |
+| hostPath | string | No\* | Path to a file or directory on the host. The executing host must be configured to allow access to this path or one of its parent directories. |
 | result | string | No\* | Name of a previous task whose result will be mounted. A result source implies a dependency, meaning this task will not run until its parent completes successfully. |
+| url | string | No\* | URL is a web location from which to download data. Beaker currently supports S3 (`s3://`), GCS (`gs://`), and HTTP(S) (`https://`) URLs.
+| secret | string | No\* | Name of a secret within the experiment's workspace which will be mounted as a plain-text file. |
 
-\* Exactly one field must be defined.
+\* Exactly one source field must be defined.
 
 ### ResultSpec
 
