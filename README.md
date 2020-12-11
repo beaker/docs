@@ -3,15 +3,19 @@
 [Beaker](https://beaker.org) is a collaborative platform for
 rapid, reproducible research.
 
-Here is an overview of the Beaker documentation:
+## Other Resources
 
-## Get Started
+* [Beaker video tutorial](https://drive.google.com/drive/folders/1mEvcKSTmFBH9abf0nYcka3-P8jGEWCmE)
+
+## User Guide
+
+### Get Started
 
 * [Install](/docs/start/install.md)
 * [Your First Experiment](/docs/start/experiment.md)
 * [Image and dataset](/docs/start/image.md)
 
-## Learn Concepts
+### Learn Concepts
 
 * [Images](/docs/concept/images.md)
 * [Datasets](/docs/concept/datasets.md)
@@ -21,7 +25,7 @@ Here is an overview of the Beaker documentation:
 * [Workspaces](/docs/concept/workspaces.md)
 * [Secrets](/docs/concept/secrets.md)
 
-## Resources
+### Resources
 
 * [Terms of Use](https://beaker.org/tos)
 * [Releases](https://github.com/allenai/beaker/releases)
