@@ -19,7 +19,7 @@ For these instructions to work, you must have completed [installing Beaker](inst
 3. From the command line at this directory, enter:
 
    ```bash
-   beaker experiment create -f experiment.yaml
+   beaker experiment create experiment.yaml
    ```
 
 You should see the following output:
