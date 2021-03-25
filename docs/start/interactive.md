@@ -27,10 +27,10 @@ Finally, Beaker will create an interactive session for you.
 
 Each interactive session is backed by a Docker container.
 Within the container, you are free to do whatever you want; you cannot affect other processes on the machine.
-Everything except for your home directory and `/net` are destroyed once the session stops.
+Everything except for your home directory and `/net` is destroyed once the session stops.
 
 By default, interactive sessions use the `allenai/base:cuda11.2-ubuntu20.04` Docker image which is maintained by the Beaker team.
-This image is based on Ubuntu 20.04 and already has CUDA drivers installed.
+This image is based on Ubuntu 20.04 and already has CUDA 11.2 drivers installed.
 It also comes with some useful tools like the AWS CLI, Google Cloud CLI, and the Beaker CLI.
 If you find that any tools are missing, please contact the Beaker team and we will consider adding them.
 
@@ -40,7 +40,7 @@ NFS is also available in the `/net` directory.
 ### Additional GPUs
 
 By default, sessions are assigned 1 GPU.
-If you need more GPUs, the `--gpus <count>` flag when creating a session e.g. `beaker session create --gpus 2`.
+If you need more GPUs, use the `--gpus <count>` flag when creating a session e.g. `beaker session create --gpus 2`.
 
 There is currently no way to run an interactive session without claiming a GPU.
 If you would like to use Beaker Interactive without a GPU, please contact the Beaker team.
