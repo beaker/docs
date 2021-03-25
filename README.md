@@ -14,6 +14,7 @@ rapid, reproducible research.
 * [Install](/docs/start/install.md)
 * [Your First Experiment](/docs/start/experiment.md)
 * [Image and dataset](/docs/start/image.md)
+* [Beaker Interactive](/docs/start/interactive.md)
 
 ### Learn Concepts
 
