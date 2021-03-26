@@ -1,12 +1,12 @@
 
-# Beaker Interactive
+# Interactive Sessions
 
-Beaker Interactive is a way to use Beaker to quickly experiment
+Interactive sessions are a way to use Beaker to quickly experiment
 without the overhead of creating an image each time you change your code.
 
 ## Select a Machine
 
-Beaker Interactive is available on any machine that is running Beaker.
+Interactive sessions are available on any machine that is running Beaker.
 You can see a list of available machines by first selecting a cluster
 from the [list of on-premise clusters](https://beaker.org/clusters).
 Once you have a chosen cluster, select any node to find its hostname.
@@ -43,7 +43,7 @@ By default, sessions are assigned 1 GPU.
 If you need more GPUs, use the `--gpus <count>` flag when creating a session e.g. `beaker session create --gpus 2`.
 
 There is currently no way to run an interactive session without claiming a GPU.
-If you would like to use Beaker Interactive without a GPU, please contact the Beaker team.
+If you would like to create an interactive session without a GPU, please contact the Beaker team.
 This is a feature that we will build if there is sufficient demand.
 
 ### Running a Command
