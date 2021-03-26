@@ -9,7 +9,7 @@ without the overhead of creating an image each time you change your code.
 Beaker Interactive is available on any machine that is running Beaker.
 You can see a list of available machines by first selecting a cluster
 from the [list of on-premise clusters](https://beaker.org/clusters).
-Once you have a cluster, select a node within that cluster and get its hostname.
+Once you have a chosen cluster, select any node to find its hostname.
 
 ## Connect to the Machine
 
@@ -25,17 +25,17 @@ Finally, Beaker will create an interactive session for you.
 
 ## Interactive Environment
 
-Each interactive session is backed by a Docker container.
-Within the container, you are free to do whatever you want; you cannot affect other processes on the machine.
+Each interactive session is hosted in a container sandbox.  Within the container
+you are free to run or install whatever you want; you won't affect other processes on the machine.
 Everything except for your home directory and `/net` is destroyed once the session stops.
 
 By default, interactive sessions use the `allenai/base:cuda11.2-ubuntu20.04` Docker image which is maintained by the Beaker team.
 This image is based on Ubuntu 20.04 and already has CUDA 11.2 drivers installed.
 It also comes with some useful tools like the AWS CLI, Google Cloud CLI, and the Beaker CLI.
-If you find that any tools are missing, please contact the Beaker team and we will consider adding them.
+If you find we've missed a common tool, please contact the team and we will consider adding it.
 
-Your home directory is mounted into the container so anything you write to `~` will persist between sessions.
-NFS is also available in the `/net` directory.
+Your home directory is mounted into the container so anything you write to `~` will persist
+between sessions on that node. NFS is also available in the `/net` directory.
 
 ### Additional GPUs
 
