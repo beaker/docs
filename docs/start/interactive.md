@@ -125,3 +125,14 @@ To remove the credentials, delete `~/.git-credentials`.
 If your token is compromised, you can delete it [here](https://github.com/settings/tokens).
 
 ![Deleting a personal access token](/docs/images/github-personal-access-token-delete.png)
+
+### Name and Email
+
+Before making a commit, you must tell Git who you are.
+
+```
+git config --global user.name <name>
+git config --global user.email <email>
+```
+
+This will be cached in `~/.gitconfig` and persist across sessions on the same machine.
