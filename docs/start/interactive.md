@@ -76,9 +76,9 @@ for your interactive sessions.
 
 ## Git Authentication
 
-We recommend authenticating with GitHub using personal access tokens since they
-are easy to generate and revoke. You can also authenticate using a private SSH key
-following [GitHub's instructions](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+You can authenticate with GitHub using a personal access token or
+[an SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+Here, we describe authenticating with an access token.
 
 First, generate a new personal access token [here](https://github.com/settings/tokens/new)
 and grant it the repo scope.
@@ -91,43 +91,19 @@ for later use.
 Now, you should be able to clone any GitHub repository over HTTPS.
 When prompted for your password, enter the personal access token.
 
-### Credential Helper
+### Cache Credentials
 
-By default, Git will ask for your password every time you interact with GitHub.
-The credential helper can cache your credentials in memory or on disk to avoid this.
-
-#### Memory
-
-Use the `cache` credential helper to store credentials in memory.
-By default, credentials are cached for 15 minutes, but this can be adjusted with the `--timeout` flag.
-Note that credentials will not persist across sessions with this method.
-
-```
-git config --global credential.helper 'cache --timeout 3600'
-```
-
-#### Disk
-
-Use the `store` credential helper to store credentials on disk.
-Credentials will persist forever with this method and you won't need to
-re-enter your credentials every time you start a session.
-You will need to enter credentials if you move to a new machine.
+To avoid having to enter you credentials on every Git operation, run the following:
 
 ```
 git config --global credential.helper store
 ```
 
-To remove the credentials, delete `~/.git-credentials`.
-
-### Deleting a Token
-
-If your token is compromised, you can delete it [here](https://github.com/settings/tokens).
-
-![Deleting a personal access token](/docs/images/github-personal-access-token-delete.png)
+This will cache your personal access token at `~/.git-credentials`.
 
 ### Name and Email
 
-Before making a commit, you must tell Git who you are.
+Before making a commit, you must tell Git who you are:
 
 ```
 git config --global user.name <name>
@@ -135,3 +111,9 @@ git config --global user.email <email>
 ```
 
 This will be cached in `~/.gitconfig` and persist across sessions on the same machine.
+
+### Deleting a Token
+
+If your token is compromised, you can delete it [here](https://github.com/settings/tokens).
+
+![Deleting a personal access token](/docs/images/github-personal-access-token-delete.png)
