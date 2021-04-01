@@ -85,7 +85,7 @@ and grant it the repo scope.
 
 ![Generating a personal access token with repo scope](/docs/images/github-personal-access-token-scope.png)
 
-You will only be able to view the on GitHub when it is created so store it in 1Password
+You will only be able to view the token on GitHub when it is created so store it in 1Password
 for later use.
 
 Now, you should be able to clone any GitHub repository over HTTPS.
