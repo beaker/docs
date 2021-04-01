@@ -78,8 +78,7 @@ for your interactive sessions.
 
 We recommend authenticating with GitHub using personal access tokens since they
 are easy to generate and revoke. You can also authenticate using a private SSH key
-but be sure to generate one specifically for Beaker since these machines are shared
-across all of AI2.
+following [GitHub's instructions](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 First, generate a new personal access token [here](https://github.com/settings/tokens/new)
 and grant it the repo scope.
