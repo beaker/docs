@@ -38,18 +38,18 @@ For this tutorial, use the code from [https://github.com/beaker/mnist-example](h
 
 1. Download https://github.com/beaker/mnist-example to your machine.
 
-2. Download the dataset from from [here](https://beaker.org/ds/ds_kf6v919aq7hk/details) to a subdirectory named `data` in `mnist-example-master`.  The *dataset* contains the files referenced by the code of the experiment. A convenient way to download the MNIST dataset from Beaker is to go to your `mnist-example-master` directory from your Terminal shell, then run:
+2. Download the dataset from from [here](https://beaker.org/ds/ds_efvqdiqlq7ld/details) to a subdirectory named `data` in `mnist-example-master`.  The *dataset* contains the files referenced by the code of the experiment. A convenient way to download the MNIST dataset from Beaker is to go to your `mnist-example-master` directory from your Terminal shell, then run:
 
   ```
-  $ beaker dataset fetch --output=./data ds_kf6v919aq7hk
+  $ beaker dataset fetch --output=./data ds_efvqdiqlq7ld
   ```
 
-You can get the dataset ID (ds_kf6v919aq7hk) from the dataset page on [Beaker.org](https://beaker.org/ds/ds_kf6v919aq7hk/details).
+You can get the dataset ID (ds_efvqdiqlq7ld) from the dataset page on [Beaker.org](https://beaker.org/ds/ds_efvqdiqlq7ld/details).
 
 The result is output:
 
 ```
-Downloading dataset ds_kf6v919aq7hk to directory ./data/ ... done.
+Downloading dataset ds_efvqdiqlq7ld to directory ./data/ ... done.
 ```
 
 Also, your `mnist-example-master/data` subdirectory should contain:
@@ -122,10 +122,10 @@ In later examples, we'll show you how to set up your own Dockerfile for building
 Now you have a Docker image of a complete local experiment's codebase and dataset. Next, create a Beaker *image* to represent this experiment and push it to Beaker.org for management and reuse.
 
 ```
-$ beaker image create -n <mymnist> mnist
+$ beaker image create -n <mymnist> mymnist
 ```
 
-Note can have only one Beaker image called mymnist. So, if you've created a mymnist blueprint previously, change <mymnist> to a unique name, such as mymnist2.
+Note can have only one Beaker image called mymnist. So, if you've created a mymnist blueprint previously, change `<mymnist>` to a unique name, such as mymnist2.
 
 If you successfully create the image, you should see output such as:
 ```
@@ -195,7 +195,7 @@ You can upload any file or collection of files as a dataset with the `beaker dat
 First, recall from above, this directory contains the four image source files used by this code:
 
 ```
-$ ls data
+$ ls ./data
 t10k-images-idx3-ubyte	t10k-labels-idx1-ubyte	train-images-idx3-ubyte	train-labels-idx1-ubyte
 ```
 
