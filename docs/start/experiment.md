@@ -8,7 +8,7 @@ Don't worry if you don't know about Python, Pytorch, or MNIST data; you won't ne
 
 For these instructions to work, you must have completed [installing Beaker](install.md). When installed:
 
-1. From the existing [MNIST example](https://beaker.org/ex/ex_kjkr81zmbfio) experiment page on Beaker.org, click the **Spec** tab.
+1. From the existing [MNIST example](https://beaker.org/ex/ex_ltfgg95wz3b0) experiment page on Beaker.org, click the **Spec** tab.
 
    ![Spec for MNIST example](../images/ex_spec.png)
 
@@ -19,7 +19,7 @@ For these instructions to work, you must have completed [installing Beaker](inst
 3. From the command line at this directory, enter:
 
    ```bash
-   beaker experiment create experiment.yaml
+   beaker experiment create MNIST_Example.yaml
    ```
 
 You should see the following output:
