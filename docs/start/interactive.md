@@ -89,7 +89,7 @@ pull the latest version to the host:
 beaker session create --image docker://allennlp/allennlp
 ```
 
-You can change this behavior using the `--pull` option. The option can be
+You can change this behavior using the `--pull` flag. The flag can be
 one of `always`, `missing` or `never`, and defaults to `missing`. If the value is `always`,
 the latest version is always retrieved from the source:
 
