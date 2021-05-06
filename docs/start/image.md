@@ -122,7 +122,7 @@ In later examples, we'll show you how to set up your own Dockerfile for building
 Now you have a Docker image of a complete local experiment's codebase and dataset. Next, create a Beaker *image* to represent this experiment and push it to Beaker.org for management and reuse.
 
 ```
-$ beaker image create -n <mymnist> mymnist
+$ beaker image create --name <mymnist> mymnist
 ```
 
 Note can have only one Beaker image called mymnist. So, if you've created a mymnist blueprint previously, change `<mymnist>` to a unique name, such as mymnist2.
