@@ -164,9 +164,8 @@ flushed, so you'll need to push the image to a remote repository if you'd like t
 it again later or share it with other folks.
 
 You can push your image to either [Docker Hub](https://hub.docker.com) or
-[Beaker Images](https://beaker.org/images). If you're unsure of which to use, use Beaker. Beaker
-images are easier to use, can be used in [Beaker Experiments](../concept/experiments) and
-support fine-grained access control.
+[Beaker Images](https://beaker.org/images). If you're unsure of which to use, use Beaker, as
+Beaker allows for fine-grained access control.
 
 To push the image to Beaker, use the `beaker image create` command. You'll need to execute
 this command on the host, not in the interactive session -- which you can stop via the `exit`
