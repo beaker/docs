@@ -135,8 +135,9 @@ FROM allenai/base:cuda11.2-ubuntu20.04
 Now we'll add a `RUN` entry to the `Dockerfile` that installs `jq`:
 
 ```Dockerfile
-RUN wget -O /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
-	chmod 751 /usr/bin/jq
+RUN apt-get update && \
+    apt-get install -y jq && \
+    rm -rf /var/lib/apt/lists/*
 ```
 
 After that's done we can build an image using the `docker build` command. The resulting image
