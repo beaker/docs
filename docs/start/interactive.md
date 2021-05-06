@@ -37,14 +37,15 @@ If you find we've missed a common tool, please contact the team and we will cons
 Your home directory is mounted into the container so anything you write to `~` will persist
 between sessions on that node. NFS is also available in the `/net` directory.
 
-### Additional GPUs
+### Reserving GPUs
 
-By default, sessions are assigned 1 GPU.
-If you need more GPUs, use the `--gpus <count>` flag when creating a session e.g. `beaker session create --gpus 2`.
+By default, sessions aren't assigned a GPU.
 
-There is currently no way to run an interactive session without claiming a GPU.
-If you would like to create an interactive session without a GPU, please contact the Beaker team.
-This is a feature that we will build if there is sufficient demand.
+If you need GPUs, use the `--gpus <count>` flag when creating a session e.g.:
+
+```
+beaker session create --gpus 2
+```
 
 ### Running a Command
 
@@ -63,16 +64,130 @@ beaker session create -- python3 --version
 
 If you need to use a different base image, pass the `--image` flag when creating a session.
 
-For example, this command uses the AllenNLP base image and runs the `test-install` command.
+Beaker Interactive supports both [Docker](https://docker.com) and [Beaker](../concept/images) 
+images. To use a docker image, prefix the image name with `docker://`. To use a
+Beaker image use the `beaker://` prefix instead.
+
+For example, this command uses the AllenNLP base image and runs the `test-install` command:
 
 ```
-beaker session create --image allennlp/allennlp -- allennlp test-install
+beaker session create --image docker://allennlp/allennlp -- allennlp test-install
 ```
 
-Note: Some features, like user mapping, will not work with all images.
-In the AllenNLP image, you will see a prompt like `I have no name!@fd82c7800efa:~$`.
-Please contact the Beaker team if you need help setting up a custom environment
-for your interactive sessions.
+Some features, like user mapping, will not work with all images. For instance, In the AllenNLP 
+image, you will see a prompt like `I have no name!@fd82c7800efa:~$`. Please contact the 
+Beaker team if you need help setting up a custom environment for your interactive sessions.
+
+### Image Caching
+
+By default Beaker Interactive will use a local copy of an image if one exists. For example, if 
+you've ran `docker pull allennlp/allennlp` before, then starting a session using that image won't
+pull the latest version to the host:
+
+```
+beaker session create --image docker://allennlp/allennlp
+```
+
+You can change this behavior using the `--pull` option. The option can be 
+one of `always`, `missing` or `never`, and defaults to `missing`. If the value is `always`,
+the latest version is always retrieved from the source:
+
+```
+beaker session create --image docker://allennlp/allennlp --pull always
+```
+
+If the value is `missing` the image will only be pulled if it doesn't already exist locally. 
+
+Setting the value to `never` means that the image won't ever be pulled, which means you'll see 
+an error if it doesn't exist in the local cache:
+
+```
+beaker session create --image docker://php --pull never
+Starting session 01F51DJY6PQEWFZRVVDQ7072A2... (Press Ctrl+C to cancel)
+Verifying image (docker://php)...
+Error: Error: No such image: php
+```
+
+### Building Custom Images
+
+At some point you might need to install additional software in your interactive session. You can 
+do this without existing the session, but the changes won't persist after the session 
+stops. To persist those changes you'll need to build a custom image. For the purpose of example 
+let's assume we want to create an image with  [jq](https://stedolan.github.io/jq/) installed.
+
+Start by creating a `Dockerfile`:
+
+```
+touch Dockerfile
+```
+
+If you're unfamiliar with the `Dockerfile` syntax, you can read more about it [here](
+https://docs.docker.com/engine/reference/builder/).
+
+Next chose a base image to start from. If you're unsure of what to use it's probably
+good to use the [allenai/base](https://hub.docker.com/r/allenai/base/tags) image:
+
+```Dockerfile
+FROM allenai/base:cuda11.2-ubuntu20.04
+```
+
+Now we'll add a `RUN` entry to the `Dockerfile` that installs `jq`:
+
+```Dockerfile
+RUN wget -O /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
+	chmod 751 /usr/bin/jq
+```
+
+After that's done we can build an image using the `docker build` command. The resulting image
+will only exist in our local cache: 
+
+```
+docker build -t allenai/base:cuda11.2-ubuntu20.04-jq1.6 .
+```
+
+Now you can start a session using that image like so:
+
+```
+beaker session create --image docker://allenai/base:cuda11.2-ubuntu20.04-jq1.6
+```
+
+...and you should now be able to use `jq` like so:
+
+```
+[BEAKER] sams ~ $ echo '{ "jq": "is pretty great!" }' | jq
+{
+  "jq": "is pretty great!"
+}
+```
+
+At this point the image **only** exists in your local cache. The local image cache is periodically 
+flushed, so you'll need to push the image to a remote repository if you'd like to use 
+it again later or share it with other folks at AI2.
+
+You can push your image to either [Docker Hub](https://hub.docker.com) or 
+[Beaker Images](https://beaker.org/images). If you're unsure of which to use, use Beaker. Beaker
+images are easier to use, can be used in [Beaker Experiments](../concept/experiments) and 
+support fine-grained access control.
+
+To push the image to Beaker Images, use the `beaker image create` command. You'll need to execute
+this command on the host, not in the interactive session -- which you can exit by either
+typing `exit` or pressing `Ctrl^D`.
+
+```
+beaker image create allenai/base:cuda11.2-ubuntu20.04-jq1.6 \
+    --description "allenai/base with jq too!"
+Pushing allenai/base:cuda11.2-ubuntu20.04-jq1.6 as im_j1cp9vbscnz8 ...
+```
+
+Once the image is pushed, you can start another interactive session using the image id
+in the output of the the create command:
+
+```
+beaker session create --image beaker://im_j1cp9vbscnz8
+```
+
+That command will work on other hosts too, and the image will be persisted indefinitely so you
+can continue to use it.
 
 ## Git Authentication
 
