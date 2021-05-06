@@ -73,9 +73,11 @@ For example, this command uses the AllenNLP base image and runs the `test-instal
 beaker session create --image docker://allennlp/allennlp -- allennlp test-install
 ```
 
-Some features, like user mapping, will not work with all images. For instance, In the AllenNLP
-image, you will see a prompt like `I have no name!@fd82c7800efa:~$`. Please contact the
-Beaker team if you need help setting up a custom environment for your interactive sessions.
+Some features, like user mapping, will only work with the official 
+base image (`allenai/base:cuda11.2-ubuntu20.04`) or images that extend from it. For instance, 
+In the AllenNLP image, you will see a prompt like `I have no name!@fd82c7800efa:~$`. 
+Please contact the Beaker team if you need help setting up a custom environment for your 
+interactive sessions.
 
 ### Image Caching
 
