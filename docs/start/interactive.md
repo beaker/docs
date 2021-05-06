@@ -168,9 +168,9 @@ You can push your image to either [Docker Hub](https://hub.docker.com) or
 images are easier to use, can be used in [Beaker Experiments](../concept/experiments) and
 support fine-grained access control.
 
-To push the image to Beaker Images, use the `beaker image create` command. You'll need to execute
-this command on the host, not in the interactive session -- which you can exit by either
-typing `exit` or pressing `Ctrl^D`.
+To push the image to Beaker, use the `beaker image create` command. You'll need to execute
+this command on the host, not in the interactive session -- which you can stop via the `exit`
+command.
 
 ```
 beaker image create allenai/base:cuda11.2-ubuntu20.04-jq1.6 \
