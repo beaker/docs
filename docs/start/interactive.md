@@ -174,15 +174,15 @@ typing `exit` or pressing `Ctrl^D`.
 
 ```
 beaker image create allenai/base:cuda11.2-ubuntu20.04-jq1.6 \
+    --name "base-cuda-jq" \
     --description "allenai/base with jq too!"
-Pushing allenai/base:cuda11.2-ubuntu20.04-jq1.6 as im_j1cp9vbscnz8 ...
 ```
 
-Once the image is pushed, you can start another interactive session using the image id
-in the output of the the create command:
+Once that's complete, you can start another interactive session using the name you gave the
+Beaker image:
 
 ```
-beaker session create --image beaker://im_j1cp9vbscnz8
+beaker session create --image beaker://base-cuda-jq
 ```
 
 That command will work on other hosts too, and the image will be persisted indefinitely so you
