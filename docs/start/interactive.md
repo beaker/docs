@@ -73,10 +73,10 @@ For example, this command uses the AllenNLP base image and runs the `test-instal
 beaker session create --image docker://allennlp/allennlp -- allennlp test-install
 ```
 
-Some features, like user mapping, will only work with the official 
-base image (`allenai/base:cuda11.2-ubuntu20.04`) or images that extend from it. For instance, 
-In the AllenNLP image, you will see a prompt like `I have no name!@fd82c7800efa:~$`. 
-Please contact the Beaker team if you need help setting up a custom environment for your 
+Some features, like user mapping, will only work with the official
+base image (`allenai/base:cuda11.2-ubuntu20.04`) or images that extend from it. For instance,
+In the AllenNLP image, you will see a prompt like `I have no name!@fd82c7800efa:~$`.
+Please contact the Beaker team if you need help setting up a custom environment for your
 interactive sessions.
 
 ### Image Caching
@@ -233,3 +233,47 @@ This will be cached in `~/.gitconfig` and persist across sessions on the same ma
 If your token is compromised, you can delete it [here](https://github.com/settings/tokens).
 
 ![Deleting a personal access token](/docs/images/github-personal-access-token-delete.png)
+
+## Reattaching to a Session
+
+If you lose connection to a session and want to reattach to it, use `beaker session attach`.
+
+First, find the ID of the session you want to attach to:
+
+```
+beaker session list
+```
+
+Then, reattach to the session:
+
+```
+beaker session attach <session>
+```
+
+## Forking a Session
+
+Sessions can run multiple commands at once.
+This can be useful if you need to check on the main process of a session without interrupting it.
+
+To get a new terminal in an existing session, run:
+
+```
+beaker session exec <session>
+```
+
+When you quit this terminal, the session will continue to run.
+The session will stop when the main process exits.
+
+You can also provide a command to `exec`. This example prints GPU utilization:
+
+```
+beaker session exec <session> nvidia-smi
+```
+
+## Stopping a Session
+
+To stop a session that you are not attached to, run:
+
+```
+beaker session stop <session>
+```
